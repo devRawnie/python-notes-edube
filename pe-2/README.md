@@ -1,0 +1,35 @@
+# PE 2
+
+## [Modules](https://docs.python.org/3/py-modindex.html)
+
+- **Namespace** : Space in which some names exist which do not conflict with each other
+- Import statements supersedes any previous declarations of the same name. Similarly if `from x import y` syntax is used, and y is also defined manually later on, then the latest definition would be considered
+- **dir(ob)** : Returns an alphabetically sorted list of entity names available in `ob`, which can be a module, a function or a variable
+- `math`: **pow, log, log10, log2, exp, sin, cos, tan**
+- `random`: 
+- - random() : float ∈ [0,1)
+- - seed(int): If nothing is passed, it sets the seed as current time
+- - randrange(beg, end, step)
+- - randint(left, right)
+> Right side is excluded by default
+- - choice(seq): Picks one random element
+- - sample(seq, n): Picks n random elements
+- `platform`: Gives access to underlying platform data
+- - platform(): Gives platform name
+- - machine(): Gives machine architecture (32, 64)
+- - processor(): Processor name
+- - system(): returns OS name as string
+- - version(): OS Version
+- - python_implementation(), python_version_tuple()
+
+## Package 
+
+> Collection of modules
+
+**__pycache__**: This will put the imported module in a semi compiled form with name `module-name.cpython-xy.pyc`
+- pyc: Python compiled
+- xy: Python version
+
+**__name__** : If a file is executed directly, this is set to `__main__`, and if it is imported then this is set to the module name
+**__init__.py**: Used to initialize a package
+`sys.path` contains all the paths where python would search for installed packages
