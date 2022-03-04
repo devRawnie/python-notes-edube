@@ -33,3 +33,17 @@
 **__name__** : If a file is executed directly, this is set to `__main__`, and if it is imported then this is set to the module name
 **__init__.py**: Used to initialize a package
 `sys.path` contains all the paths where python would search for installed packages
+
+## Package Manager
+
+**PyPI** (Python Package Index): Repository for distributing python packages
+
+Command line tool to handle packages: `pip` short for (pip installs packages)
+- `pip help operation-name`
+- `pip show package-name`
+- `pip search package-name`
+
+
+**Dependencies**
+- Dependent packages that need to be installed to use a specific package
+- Ex. To use `django`, `asgiref` is a dependency
