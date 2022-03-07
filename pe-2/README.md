@@ -50,6 +50,22 @@ Command line tool to handle packages: `pip` short for (pip installs packages)
 
 ## Strings
 
+- Immutable sequences
+- methods:
+  - "".index(char)
+  - "".count(char)
+  - "".capitalize() `First Character`
+  - "".center(n, char) "Tries to put the string in the center adding spaces or `char` as specfied
+  - "".endswith(pattern), "".startswith()
+  - "".find(): Looks for substrings, "".rfind(): Starts from the right
+  - "".isalnum(), "".isalpha(), "".isdigit(), "".islower(), "".isupper(), "".isspace()
+  - "".swapcase(): Swaps the case for all letters in the string
+  - "".title(): Every word's first letter to upper case turning all other ones to lower case
+  - "<sep>".join([]) : Joins the contents of list with the separater string
+  - "".lstrip() : Remove leading whitespaces, "".rstrip(): Trailing whitespaces, "".strip(): Both leading and trailing whitespaces
+  - "".replace(n1, n2, max_count): Replace `n1` in the string with `n2` for `max_count` no of times
+  - "".split(char)
+
 ### I18N
 Internationalization is shortened as I18N 
 I - 18 letters - N
@@ -60,3 +76,15 @@ I - 18 letters - N
 - First 128 Code Points Makes up Upper + Lower case English characters
 - **Code Page**: Standard for using upper 128 code points to store specific national characters
 - > For example, the code point 200 makes Č (a letter used by some Slavic languages) when utilized by the ISO/IEC 8859-2 code page, and makes Ш (a Cyrillic letter) when used by the ISO/IEC 8859-5 code page.
+- **BOM (Byte Order Mark)** is a special combination of bits announcing encoding used by a file's content (eg. UCS-4 or UTF-B).
+
+## Universal Character Set
+
+UCS -32 Bytes
+
+## UTF 8
+
+- Unicode transformation format
+- Uses as many bits as it needs to represent a character
+- Ex: Latin characters -> 8 bits
+- Non latin -> 16 bits
