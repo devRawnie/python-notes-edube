@@ -36,7 +36,7 @@
 
 ## Package Manager
 
-**PyPI** (Python Package Index): Repository for distributing python packages
+### PyPI (Python Package Index): Repository for distributing python packages
 
 Command line tool to handle packages: `pip` short for (pip installs packages)
 - `pip help operation-name`
@@ -44,6 +44,19 @@ Command line tool to handle packages: `pip` short for (pip installs packages)
 - `pip search package-name`
 
 
-**Dependencies**
+### Dependencies
 - Dependent packages that need to be installed to use a specific package
 - Ex. To use `django`, `asgiref` is a dependency
+
+## Strings
+
+### I18N
+Internationalization is shortened as I18N 
+I - 18 letters - N
+
+- ASCII: American Standard Code for Information Interchange
+- Uses 8 Bits -> 256 possible characters
+- **Code Point**: Is a number which makes up a character. Ex: 32 -> Space
+- First 128 Code Points Makes up Upper + Lower case English characters
+- **Code Page**: Standard for using upper 128 code points to store specific national characters
+- > For example, the code point 200 makes Č (a letter used by some Slavic languages) when utilized by the ISO/IEC 8859-2 code page, and makes Ш (a Cyrillic letter) when used by the ISO/IEC 8859-5 code page.
