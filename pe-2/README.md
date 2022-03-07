@@ -78,13 +78,23 @@ I - 18 letters - N
 - > For example, the code point 200 makes Č (a letter used by some Slavic languages) when utilized by the ISO/IEC 8859-2 code page, and makes Ш (a Cyrillic letter) when used by the ISO/IEC 8859-5 code page.
 - **BOM (Byte Order Mark)** is a special combination of bits announcing encoding used by a file's content (eg. UCS-4 or UTF-B).
 
-## Universal Character Set
+### Universal Character Set
 
 UCS -32 Bytes
 
-## UTF 8
+### UTF 8
 
 - Unicode transformation format
 - Uses as many bits as it needs to represent a character
 - Ex: Latin characters -> 8 bits
 - Non latin -> 16 bits
+
+## Exceptions
+
+![Python exception tree](https://user-images.githubusercontent.com/43227329/157039228-1c0590f1-06ae-46de-a0ea-846525b31cf9.png)
+
+> `raise` keyword can be used directly without specifying an exception type, with a restriction that it can only sit inside a `catch` block. It will immediately re-raise the current exception
+  
+- `assert` : Keyword that evaluates an expression. If it results in True -> Continues with the flow. If it results in False -> Raises an `AssertionError` exception
+  
+  
