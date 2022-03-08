@@ -98,3 +98,23 @@ UCS -32 Bytes
 - `assert` : Keyword that evaluates an expression. If it results in True -> Continues with the flow. If it results in False -> Raises an `AssertionError` exception
   
   
+## Object Oriented Programming
+
+### Procedural Programming
+
+- Code and Data are separate
+- Code can use/abuse data
+
+### Object Oriented Approach
+
+- Data and Code both live together in `Classes`
+- Can create hierarchies using Superclasses and Subclasses
+- Class : Set of objects (Attributes of a class)
+- Instance: Instantiation of the Class which has values for its variables
+- **Inheritance**: A subclass inherits all the properties of the superclass
+- Object: Contains `name`, `properties`, `methods` to modify its properties
+- Append two underscores `__`, before the name of a property, and it becomes private. i.e. it is not accessible outside the class
+
+> Constructor for the superclass is to be invoked explicitly, SUPERCLASS.__init__(self)
+> Any method of the superclass which needs calling in sub-class will require the `self` argument. SUPERCLASS.method(self)
+  
