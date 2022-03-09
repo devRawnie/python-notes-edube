@@ -109,12 +109,41 @@ UCS -32 Bytes
 
 - Data and Code both live together in `Classes`
 - Can create hierarchies using Superclasses and Subclasses
-- Class : Set of objects (Attributes of a class)
-- Instance: Instantiation of the Class which has values for its variables
-- **Inheritance**: A subclass inherits all the properties of the superclass
+- Class : Set of properties, used to create objects
+- Instance: Instantiation of the Class, an object of the class which has values for its variables
 - Object: Contains `name`, `properties`, `methods` to modify its properties
-- Append two underscores `__`, before the name of a property, and it becomes private. i.e. it is not accessible outside the class
+- Properties
+  - **Instance Variables**: Declared using `self`, are tied to an instance of the class
+  - New instance variables can be added on an existing class object, even if it did not exist in the class definition
+  - Append two underscores `__`, before the name of a property, and it becomes private. i.e. it is not accessible outside the class
+  - **Mangling**: If a private instance variable is added using a Class method, it is renamed as `_classname__variablename`. It is accessible from the outer world, but using this special syntax only. This mangling does not happen when a private variable is added from the object instance
+  - **Class Variable**: These variables are tied to the Class itself. Only one copy of such variables exist. For multiple objects, multiple copies are not created. These are not visible in the objects `__dict__` method. These are visible in the `Class's` __dict__ method
+    - __dict__
+    - __name__
+    - __module__: name of the module currently being run
+    - __bases__ : A tuple, contains all classes which the current class has inherited from. If no explicit inheritance is specified, `object` class is returned as output
+  ![image](https://user-images.githubusercontent.com/43227329/157433356-17a9d94d-767f-4428-a157-cc33bf8dfe92.png)
+
+
+### Inheritance
+
+- A subclass inherits all the properties of the superclass
+- issubclass(Subclass, Baseclass)
+- super() can be used to invoke a method of the baseclass like: `super().function_name(parameter)`
+- `BaseClassName.function_name(self, parameter)` is original way of doing this
+- Python searches for the class name in `current-object` -> `immediate base class` -> `base class of the immediate base class` . . .
+- In case of multiple inheritance it searches `current-object` -> `first base class` -> `second base class` ...
+- Multiple inheritance have a [problem](https://en.wikipedia.org/wiki/Single-responsibility_principle)
+- Multiple inhertiance also has the `Diamond Problem`
 
 > Constructor for the superclass is to be invoked explicitly, SUPERCLASS.__init__(self)
 > Any method of the superclass which needs calling in sub-class will require the `self` argument. SUPERCLASS.method(self)
+
+### Polymorphism
+
+ ![image](https://user-images.githubusercontent.com/43227329/157437300-a5d5da8b-0344-4caa-84c9-c546f2843d3f.png)
+
+### Method Resolution Order (MRO)
   
+It is a strategy in which a particular programming language scans through the upper part of a class’s hierarchy in order to find the method it currently needs. It works as explained under [inhertiance](./#Inheritance)
+
