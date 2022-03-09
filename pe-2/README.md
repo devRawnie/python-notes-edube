@@ -147,3 +147,26 @@ UCS -32 Bytes
   
 It is a strategy in which a particular programming language scans through the upper part of a class’s hierarchy in order to find the method it currently needs. It works as explained under [inhertiance](./#Inheritance)
 
+  
+## Miscellaneous
+  
+### Generators
+
+Using `generators`, we can:
+- produce a series of values
+- control the iteration process
+- also known as `iterators`
+
+Iterator protocol
+- a way in which an object should behave to conform to the rules imposed by the context of the `for` and `in` statements
+- it should have one `__iter__` method which returns the object itself
+- it should have one `__next__` method which will return the next available method or raise a `StopIteration` Exception
+
+> An object may be used as an Iterator only if it returns `self` inside its implementation of the `__iter__` method
+
+`yield` keyword
+ - Provides the value of an expression specified after it, without losing the state
+ - Variable values are frozen and used at the time of next invocation
+ - Used inside of a function. The function becomes a `generator` on using this keyword
+
+[Continue](https://edube.org/learn/pe-2/generators-and-closures-47)
