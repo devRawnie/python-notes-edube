@@ -198,3 +198,25 @@ def outer(val): # Closure function
     return loc
   return inner
 ```
+
+## File Handling
+
+- Files are accessed via `handlers` and `streams` which help us write code that is OS Independent
+- Connecting with stream -> Opening the file. Disconnecting this link -> closing the file
+  
+### Modes of interacting with the file
+![image](https://user-images.githubusercontent.com/43227329/157675545-9d0bfa94-da04-4791-a1ed-1b5814dd8516.png)
+
+1. read mode
+2. write mode
+3. update/append mode
+
+Different objects that deal with Files
+![image](https://user-images.githubusercontent.com/43227329/157667654-34d1fee2-7857-4279-8915-5c84f487e988.png)
+
+1. Text Streams: Structured in lines, read and written one line (sequence of typographic characters) at a time 
+2. Binary Streams: Contain sequence of bytes. Data is read and written byte by byte, or block by block (where block is a fixed size of no of bytes)
+
+File opening [errors](https://edube.org/learn/pe-2/processing-files-42)
+Processing text [files](https://edube.org/learn/pe-2/working-with-real-files-42)
+> During reading and writing in Windows based system, if a file is open in `text-mode`, every pair of `\r\n` is replaced with `\n` while reading and vice-versa while writing.
