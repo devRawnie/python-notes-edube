@@ -156,6 +156,8 @@ Using `generators`, we can:
 - produce a series of values
 - control the iteration process
 - also known as `iterators`
+- using paranthesis `()` and the syntax used for list comprehension, we can create generators
+- Ex: `(1 for 1 in range(10))` -> Generator
 
 Iterator protocol
 - a way in which an object should behave to conform to the rules imposed by the context of the `for` and `in` statements
@@ -169,4 +171,30 @@ Iterator protocol
  - Variable values are frozen and used at the time of next invocation
  - Used inside of a function. The function becomes a `generator` on using this keyword
 
-[Continue](https://edube.org/learn/pe-2/generators-and-closures-47)
+### Lambda Function
+
+`lambda parameter(s) : expression`
+- Its an anonymous function
+- Can be used as arguments
+
+### map function
+
+`map(function, list)`
+- invokes the function for each element of the list
+- returns a generator
+
+### filter function
+
+`filter(function, list)`
+- invokes the function on each element of the list and expect a True/False from the function
+- if the function returns true for element x of the list, that element will be collected by `filter` function
+- returns a list of all elements which return True after going through the specified function
+
+### Closure
+```py
+def outer(val): # Closure function
+  loc = val
+  def inner():
+    return loc
+  return inner
+```
