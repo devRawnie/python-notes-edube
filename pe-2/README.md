@@ -220,3 +220,22 @@ Different objects that deal with Files
 File opening [errors](https://edube.org/learn/pe-2/processing-files-42)
 Processing text [files](https://edube.org/learn/pe-2/working-with-real-files-42)
 > During reading and writing in Windows based system, if a file is open in `text-mode`, every pair of `\r\n` is replaced with `\n` while reading and vice-versa while writing.
+
+
+### Bytearray
+  
+- Used to store a series of `bytes`
+- `bytearray(10)` : can hold 10 bytes of data, filled with 0s
+
+### Read a binary file
+
+- `fp.readinto(bytearray)` : will read the contents of file pointed to by `fp` in the bytearray
+- `bytearray(fp.read())` : this also creates a bytearray, but this one is immutable
+
+## OS module
+
+- `os.uname` : Operating System, Network Name, Machine architecture details. This is available on Linux. For windows: use `platform.uname`
+- `os.mkdir` : Creates one directory
+- `os.makedirs` : Creates directories recursively
+- `os.rmdir` / `os.removedirs`
+- `os.system(command)`: 0 -> Success | 1 -> Error
