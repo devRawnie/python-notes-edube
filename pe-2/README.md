@@ -239,3 +239,29 @@ Processing text [files](https://edube.org/learn/pe-2/working-with-real-files-42)
 - `os.makedirs` : Creates directories recursively
 - `os.rmdir` / `os.removedirs`
 - `os.system(command)`: 0 -> Success | 1 -> Error
+
+## DateTime Module
+
+- `datetime.date(year, month, day)`
+- `datetime.date.today()`
+- `time.time()` : Timestamp
+- ISO 8601 Format : `yyyy-mm-dd`
+- `date` objects are immutable
+- `date.replace(year, month?, day?)`: Returns a new object by replacing the value of the passed parameter
+- `datetime.time(hour, minute, second, microsecond)`
+- `time.ctime(timestamp?)` : Converts the epoch time starting from January 1, 1970 to a string
+- `time.gmtime/time.localtime (timestamp?)` : Converts the timestamp to a `struct` populated with different values
+- `time.mktime(struct)` : Converts time struct to timestamp2
+- `datetime.datetime(year, month, day, hour, minute, second)`
+- `date.strftime(string_format_for_datetime)`: Formatting is done based on following [codes](https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes)
+- `date.strptime(time_string, format_string)`: Parse the time based on format_string
+
+> Timedelta : This object is returned when two `date` or `datetime` objects are added or subtracted
+
+## Calendar module
+
+- `calendar.calendar(year)` : returns a string object with a formatted calendar for the year specified. Similar to `calendar.prcal(year)` which doesn't require a print function
+- `calendar.month(year, month)`: returns a string with the formatted month representation for the month and year passed
+- `calendar.setweekday(0-6)`, `calendar.weekheader(no_characters_day_name)`
+- `calendar.isleap(year)`
+- `calendar.monthdays2calendar(year, month)` : returns a list of tuples with (date, weekday_integer)
