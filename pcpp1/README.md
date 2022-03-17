@@ -156,6 +156,21 @@ def class_decorator(class_reference):
 
 ## Methods in a class
 
-- Static Methods
-- Class Methods
-- Instance Methods
+### Static Methods
+- Used to link logic with the Class
+- Used with `@staticmethod` decorator
+- Takes neither `self` or `cls` methods
+- Cannot modify the state of object or classes
+- Utility method
+
+### Class Methods
+
+- Used with `@classmethod` decorator
+- Invoke the **__init__** automatically
+- Takes a `cls` argument
+- Used to create an instance of the class
+
+### Instance Methods
+
+- Linked with an instance of the class 
+- Take a mandatory `self` argument
