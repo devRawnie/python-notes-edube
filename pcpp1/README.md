@@ -3,8 +3,8 @@
 ## Classes
 
 - Instances can also refer Class Variables
-- If instances modify a Class Variable, a new instance variable with the same name is created --> Leads to bugs
-- Use CLASS to refer to Class Variable
+- If class instances (objects) modify a Class Variable, a new instance variable with the same name is created --> Leads to bugs
+- Use **Class Name** to refer to Class Variable
 - `__class__` variable returns the class, an object belongs to
 - `type` is the most basic class
 
@@ -12,6 +12,7 @@
 
 - Avoid Multiple Inheritance --> Can cause Diamond Problem
 - If multiple inheritance is required, take care of **Method Resolution Order**
+- **Method Resolution Order**: Order in which a method is looked up in the base classes. This should be same as the order of inheritance. Ex A.a(), B.a() and if C inherits both A and B and calls a(), the order in which C is inherting the base classes will determine which **a()** method would be called.
 - **Polymorphism**: Overriding Base Class Methods, in Derived Class
 - `__` : Double Underscore ==> DUNDER
 - Each operation corresponds to a method. When using operators with objects, these methods are called magic methods. (surrounded by DUNDERs)
