@@ -10,6 +10,8 @@
 
 ## Inheritance
 
+- Gives an `is a` relation among objects. **Car is a Vehicle**
+- Objects are tightly coupled
 - Avoid Multiple Inheritance --> Can cause Diamond Problem
 - If multiple inheritance is required, take care of **Method Resolution Order**
 - **Method Resolution Order**: Order in which a method is looked up in the base classes. This should be same as the order of inheritance. Ex A.a(), B.a() and if C inherits both A and B and calls a(), the order in which C is inherting the base classes will determine which **a()** method would be called.
@@ -175,3 +177,73 @@ def class_decorator(class_reference):
 
 - Linked with an instance of the class 
 - Take a mandatory `self` argument
+
+## Abstract Class
+
+- Blueprint for other classes
+- Contains declaration of methods which need to be implemented in the Derived Classes
+- A separate module tests if all the abtract methods are implmeneted or not in the derived class.
+- Can not instantiate an abstract class
+- `abc` module (Abstract Base Class) of python provides packages to deal with abstract classes
+- `@abstractmethod` is used to make a method abstract and to enforce its implementation in the derived classes
+
+### `property` decorator
+- Used to encapsulate Class Attributes
+- When set over a method's name, that can be accessed directly to be read
+
+### getter/setter
+
+- `@var_name.getter`, `@var_name.setter`, `@var_name.deleter` are used to access private variables
+
+## Composition
+
+- Provides a `has a` relationship among objects
+- Laptop `has a` graphic card
+- Objects are loosely coupled
+
+```py
+class Car:
+    def __init__(self, engine):
+        self.engine = engine
+
+class GasEngine:
+    def __init__(self, horse_power):
+        self.hp = horse_power
+
+    def start(self):
+        print('Starting {}hp gas engine'.format(self.hp))
+
+class DieselEngine:
+    def __init__(self, horse_power):
+        self.hp = horse_power
+
+    def start(self):
+        print('Starting {}hp diesel engine'.format(self.hp))
+
+my_car = Car(GasEngine(4))
+
+```
+
+> IBAN (International Bank Account Number) is an algorithm to specify account numbers
+
+## Exception Handling
+
+- `except Exception as e`
+- `e` variable is bound to the type of exception
+- e.args contains all the arguments of the exception
+
+### Exception Chaining
+
+- If an exception is raised while handling another exception, we should not lost context of the first exception
+- Implicitly, the original exception is also saved if a new exception is raised
+- Explicitly we need to use `raise from` clause to raise a new exception while preserving the old one
+- The inner exception has two new attributes
+  - `__cause__`
+  - `__context__`
+
+- Each exception has a `__traceback__` attribute. This can be formatted with `format_tb()` method of the `traceback` module
+
+```py
+    except Exception as e:
+        raise NewException from e
+```
