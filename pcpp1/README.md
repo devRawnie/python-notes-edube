@@ -247,3 +247,74 @@ my_car = Car(GasEngine(4))
     except Exception as e:
         raise NewException from e
 ```
+
+## Objects Persistence
+
+- `id()`: Function returns the identity of an object. Unique and Constant Integer for an object throughout its lifetime
+
+```py
+  var_1 = 1
+  var_2 = var_1
+  var_1 == var_2  # Since var_2 is only a reference to var_1
+```
+
+- `==` : Checks equality based on value of two objects (Will return true for, var_1 == var_1 AND var_1 == var_2 \[If var_1 = 1, var_2 = 1\] )
+- `is` : Checks if two objects are equal or not (Both in value and in id())
+
+### Shallow Copy
+
+- `list_name[:]` this expression creates a shallow copy of the list
+- This is a different object which points to the same location in memory
+
+### Deep Copy
+
+- `copy.deepcopy`
+- Different object which points to a different location in memory
+- Construct a new object and recursively copy all objects found in it
+- Copies an already initialized object (so `__init__` method is not invoked for the copied object)
+![image](https://user-images.githubusercontent.com/43227329/159628493-9f7d2fdc-652b-4ccf-8157-973d37b40800.png)
+
+
+### Serialization
+
+- pickle library is used for object serialization. comes from the word `pickled` which means saving for later use
+- `pickle.dump(object, file_name), pickle.load(file_name)` to serialize and deserialize to binary files
+- `pickle.dumps(object), pickle.loads(bytes)` to serialize and deserialize to bytes
+- Function/Class defitions cannot be pickled (So that a pickled object can still be deserialized if class definition changes)
+- the code that calls the load() or loads() functions of pickle should already know the function/class definition.
+- `shelve` module is built on top of pickle module and is used to serialize multiple objects
+
+
+## Metaclasses
+- Metaclasses -> Class whose instance is also a class
+- type(Classname, tuple of base classes to inherit from, dict of method definitions and variables)
+
+```py
+def bark(self):
+    print('Woof, woof')
+
+class Animal:
+    def feed(self):
+        print('It is feeding time!')
+
+Dog = type('Dog', (Animal, ), {'age':0, 'bark':bark})
+```
+
+- `type()` calls the `__call__` method which in turn calls 
+  -  `__new__`: Responsible for creating class instance in computer memory
+  -  `__init__` method which is responsible for object initialization
+
+- Defining a meta class in another way
+
+```py
+class My_Meta(type):
+    def __new__(mcs, name, bases, dictionary):
+        obj = super().__new__(mcs, name, bases, dictionary)
+        obj.custom_attribute = 'Added by My_Meta'
+        return obj
+
+class My_Object(metaclass=My_Meta):
+    pass
+```
+
+- `mcs` is used to refer to the class
