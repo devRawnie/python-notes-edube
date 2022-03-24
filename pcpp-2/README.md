@@ -167,3 +167,26 @@ total_fruits = (apples
 - Don'y use whitespace with `=` in Default arguments
 
 Cont: [Here](https://edube.org/learn/pcpp1-python-enhancement-proposals-peps/pep-8-comments)
+
+
+### Comments
+- Keep 72 characters per line
+- Use as a sentence
+- Avoid Inline Comments
+- If inline comments are used, separate them from the expression with two spaces
+
+### Docstring
+
+- Used for documentation purpose
+- Inside triple double-quotes
+
+### Variable Naming
+- Snake Case / Camel Case
+- Capitalize all letters of acronym
+- Follow [this](https://peps.python.org/pep-0008/#prescriptive-naming-conventions)
+
+### Comparison
+
+- Use `is` , `is not` operator for comparing with `None` and Boolean Objects
+- Programming Recommendations: [Here](https://peps.python.org/pep-0008/#programming-recommendations)
+
