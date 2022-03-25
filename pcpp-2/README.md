@@ -65,7 +65,7 @@ from foo import bar
 ### Special cases aren't special enough to break the rules
 - Be consistent with the naming scheme and style of code
 
-### practicality beats purity
+### Practicality beats Purity
 
 ### Errors should never pass silently
 - Raise errors proactively, which will help debug easily
@@ -190,3 +190,40 @@ Cont: [Here](https://edube.org/learn/pcpp1-python-enhancement-proposals-peps/pep
 - Use `is` , `is not` operator for comparing with `None` and Boolean Objects
 - Programming Recommendations: [Here](https://peps.python.org/pep-0008/#programming-recommendations)
 
+## PEP 257
+
+- Standardize high-level structure of docstrings
+- It is a first statement in a module, function, class or method definition
+- Can be accessed by using the `__doc__` attribute of that object or the `help()` method
+- Written in triple double-quotes `"""docstring"""`
+- **Attribute Docstring**: Listed immediately after an assignment statement at the top level of a module, class or method [PEP 224](https://peps.python.org/pep-0224/)
+- **Additional Docstrings**: Located immediately after another docstring [PEP 287](https://peps.python.org/pep-0287/)
+- Can use `sphinx` to generate HTML from docstrings
+
+### PEP 484: Type Hinting
+
+- Allows to statically indicate the type information related to an object and its attributes
+
+```py
+# name is/shoud be of type str
+# hello function returns a str
+
+def hello(name: str) -> str:
+    return "Hello, " + name
+```
+- Not used at runtime, i.e. its ignored by the interpreter
+- Useful for IDE which show the function definition during typing
+- Refer [1](https://peps.python.org/pep-0483/), [2](https://peps.python.org/pep-0484/), [3](https://peps.python.org/pep-3107/)
+
+### Linter
+
+- Analyzes the code in real time
+- Reports any stylistic anomalies and programming errors against a set of rules
+- Reports structural and syntax error
+- `flake8`, `pylint`
+
+### Fixer
+
+- Helps fix the issues reported by a linter
+- `black`, `autopep8`
+- 
